@@ -1039,8 +1039,10 @@ Home Section style
 About section style
 ====================*/
 .main_about{
+
     display: table;
-    width:100%;
+    width: 100%;
+    padding-bottom: 50px;
 }
 
 .about_bottom_content{}
