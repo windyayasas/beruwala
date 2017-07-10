@@ -37,6 +37,15 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+        <style>
+            #map {
+                height: 300px;
+                width: 100%;
+                z-index: 2;
+            }
+        </style>
+
     </head>
     <body data-spy="scroll" data-target=".navbar-collapse">
 
@@ -162,7 +171,7 @@
                             <div class="col-sm-3">
                                 <div class="single_feature">
                                     <div class="single_feature_icon">
-                                        <i class="fa fa-clone"></i>
+                                        <i class="fa fa-building"></i>
                                     </div>
 
                                     <h4>BEST HOSPITALITY</h4>
@@ -174,7 +183,7 @@
                             <div class="col-sm-3">
                                 <div class="single_feature">
                                     <div class="single_feature_icon">
-                                        <i class="fa fa-heart-o"></i>
+                                        <i class="fa fa-heart"></i>
                                     </div>
 
                                     <h4>BEST HOTEL ROOMS</h4>
@@ -186,7 +195,7 @@
                             <div class="col-sm-3">
                                 <div class="single_feature">
                                     <div class="single_feature_icon">
-                                        <i class="fa fa-lightbulb-o"></i>
+                                        <i class="fa fa-trophy"></i>
                                     </div>
                                     <h4>BEST BEACH RESORT</h4>
                                     <div class="separator3"></div>
@@ -197,7 +206,7 @@
                             <div class="col-sm-3">
                                 <div class="single_feature">
                                     <div class="single_feature_icon">
-                                        <i class="fa fa-comments-o"></i>
+                                        <i class="fa fa-comments"></i>
                                     </div>
 
                                     <h4>FREE SUPPORT</h4>
@@ -835,20 +844,12 @@
 
             <section id="trial" class="trial text-center wow fadeIn"  data-wow-duration="2s" data-wow-dealy="1.5s">
                 <div class="main_trial_area">
-                    <div class="video_overlay sections">
-                        <div class="container">
-                            <div class="row">
-                                <div class="main_trial">
-                                    <div class="col-sm-12">
-                                        <h2>Let's Get Started Now. <span>It's FREE!</span></h2>
-                                        <h4>30 day free trial. Free plan allows up to 2 projects. Pay if you need more. 
-                                            Cancel anytime. No catches.</h4>
-                                        <a href="" class="btn btn-lg">start free trial</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
+                       
+                            
+                                <div id="map"></div>
+                            
+                        
                 </div>
             </section><!-- End of Trial section -->
 
@@ -914,6 +915,24 @@
 
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
+
+
+        <script>
+            function initMap() {
+                var uluru = {lat: 6.48317149, lng: 79.98353004};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 17,
+                    center: uluru
+                });
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+            }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMQJW6tl5LdL01b4MLyLZS-8JRPccEUBw&callback=initMap">
+        </script>
 
     </body>
 </html>
