@@ -937,6 +937,7 @@ button.btn-md:hover {
 
 .grid_item_overlay{
     position: absolute;
+    text-align: center;
     left:10%;
     top:10%;
     width:80%;
