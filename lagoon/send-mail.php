@@ -23,7 +23,7 @@ $message=$_POST['message'];
     $headers = "From:" . $Email;
     $headers2 = "From:" . $to;
     mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    mail($Email,$subject2,$message2,$headers2); // sends a copy of the message to the sender
         // You can also use header('Location: thank_you.php'); to redirect to another page.
 
   
