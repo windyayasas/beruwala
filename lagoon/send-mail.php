@@ -4,22 +4,38 @@
 
 $name=$_POST['name'];
 $Email=$_POST['email'];
-$website=$_POST['url'];
 $message=$_POST['message'];
 
 
     
     $body .= "Name: " . $name . "\n"; 
     $body .= "Email: " . $Email . "\n"; 
-    $body .= "Website: " . $website . "\n"; 
     $body .= "Message: " . $message . "\n"; 
 
     //replace with your email
-    mail("test@email.com","New email",$body); 
+    //mail("test@email.com","New email",$body); 
+
+    $to = "lagoonrestbentota@gmail.com"; 
+    $subject = "Contact Form";
+    $subject2 = "Copy of your form submission";
+    $message = $body ;
+    $message2 = "Here is a copy of your message \n"+$body ;
+    $headers = "From:" . $Email;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+        // You can also use header('Location: thank_you.php'); to redirect to another page.
 
   
 ?>
 
+
+
+  
+   
+   
+   
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
